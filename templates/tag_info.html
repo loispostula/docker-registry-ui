@@ -48,7 +48,11 @@
     <tr>
         <td>{{ len(layersV2)-index }}</td>
         <td>{{ layer["digest"] }}</td>
-        <td>{{ layer["size"]|pretty_size }}</td>
+        <td>
+            {{if layer["size"]}}
+                {{ layer["size"]|pretty_size }}
+            {{end}}
+        </td>
     </tr>
 {{end}}
 </table>
